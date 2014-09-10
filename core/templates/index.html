@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Lista de clientes</title>
+		<link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="{{ STATIC_URL }}/css/estilo.css" />
+		<script src="{{ STATIC_URL }}/js/bootstrap.min.js"></script>
+
+    <link href="{{ STATIC_URL }}/css/justified-nav.css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}/js/ie-emulation-modes-warning.js"></script>
+	</head>
+	<body>
+     <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-heading">Lista de Clientes</div>
+          <div class="panel-body">
+            <p>Veja abaixo os clientes de sua loja.</p>
+          </div>
+
+          <table class="table">
+            <tr>
+              <th>ID cliente</th>
+              <th>Nome cliente</th>
+              <th>Celular</th>
+              <th>E-mail</th>
+              <th>Cep</th>
+            </tr>
+            {% for cliente in clientes %}
+                <tr>
+                  <td>{{ cliente.id_cliente }}</td>
+                  <td>{{ cliente.nm_cliente }}</td>
+                  <td>{{ cliente.numero_cel }}</td>
+                  <td>{{ cliente.email }}</td>
+                  <td><a href="/cliente/cep/{{ cliente.cep }}/{{ cliente.id_cliente }}/">{{ cliente.cep }}</a></td>
+                  <td><a href="/cliente/formulario/{{ cliente.id_cliente }}"><button type="button" class="btn btn-warning">Editar</button></a></td>
+                </tr>
+            {% endfor %}
+          </table>
+        </div>
+    </div>
+
+    <script src="{{ STATIC_URL }}/js/ie10-viewport-bug-workaround.js"></script>
+
+	</body>
+</html>

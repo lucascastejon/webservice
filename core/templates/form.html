@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Formulário de edição do cliente</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/estilo.css" />
+    <script src="{{ STATIC_URL }}/js/bootstrap.min.js"></script>
+
+    <link href="{{ STATIC_URL }}/css/justified-nav.css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}/js/ie-emulation-modes-warning.js"></script>
+	</head>
+	<body>
+    
+    <div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">Formulário do Cliente</div>
+				<form action="salvar/" method="get">
+					<table class="table">
+					<ul class="pager">
+					  <li class="previous"><a href="/">&larr; Voltar</a></li>
+					</ul>
+						<tr>
+							<th>ID cliente</th>
+							<td><input type="text" value="{{ cliente.id_cliente }}" name="id_cliente" /></td>
+						</tr>
+						<tr>
+							<th>Nome cliente</th>
+							<td><input type="text" value="{{ cliente.nm_cliente }}" name="nm_cliente" /></td>
+						</tr>
+						<tr>
+							<th>Celular</th>
+							<td><input type="text" value="{{ cliente.numero_cel }}" name="numero_cel" /></td>
+						</tr>
+						<tr>
+							<th>E-mail</th>
+							<td><input type="email" value="{{ cliente.email }}" name="email" /></td>
+						</tr>
+						<tr>
+							<th>CEP</th>
+							<td><input type="text" value="{{ cliente.cep }}" name="cep" /></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="right">
+								<button type="submit" class="btn btn-success dropdown-toggle">Enviar</button>
+							</td>
+						</tr>
+					</table>
+				</form>
+        {% if nm_cliente %}
+          <div class="alert alert-success" role="alert">cliente enviado com sucesso!</div>
+        {% endif %}
+			</div>
+		</div>
+	</body>
+</html>

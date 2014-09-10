@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Endereço de {{ cliente }}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/estilo.css" />
+    <script src="{{ STATIC_URL }}/js/bootstrap.min.js"></script>
+
+    <link href="{{ STATIC_URL }}/css/justified-nav.css" rel="stylesheet">
+    <script src="{{ STATIC_URL }}/js/ie-emulation-modes-warning.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">Endereço de {{ cliente }}</div>
+        <form action="salvar/" method="get">
+          <table class="table">
+          <ul class="pager">
+            <li class="previous"><a href="/">&larr; Voltar</a></li>
+          </ul>
+            <tr>
+              <th>Nome cliente</th>
+              <td>{{ cliente }}</td>
+            </tr>
+            <tr>
+              <th>Rua</th>
+              <td>{{ logradouro }}</td>
+            </tr>
+            <tr>
+              <th>Bairro</th>
+              <td>{{ bairro }}</td>
+            </tr>
+            <tr>
+              <th>Cidade</th>
+              <td>{{ localidade }}</td>
+            </tr>
+            <tr>
+              <th>Estado</th>
+              <td>{{ uf }}</td>
+            </tr>
+            <tr>
+              <th>Cep</th>
+              <td>{{ cep }}</td>
+            </tr>
+
+            <tr>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
